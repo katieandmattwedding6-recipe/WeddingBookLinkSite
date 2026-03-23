@@ -190,5 +190,31 @@ h1 {
         height: 2em;
         width: 2em;
     }
+
+    /* Recipe detail page — mobile */
+    .recipe-detail {
+        padding: 20px 16px;
+    }
+    .recipe-detail h1 {
+        font-size: 26px;
+    }
+    .recipe-detail img {
+        max-height: 240px;
+        margin: 14px 0;
+    }
+    .recipe-detail .description {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+    .recipe-btn {
+        display: block;
+        font-size: 17px;
+        padding: 14px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .back-link {
+        font-size: 14px;
+    }
 }
 
