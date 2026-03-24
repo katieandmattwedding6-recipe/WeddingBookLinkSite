@@ -224,9 +224,26 @@ h1 {
     border: 1.5px solid #c9a8e8;
 }
 
+.random-recipe-mobile {
+    display: none;
+}
+
 /*For mobile*/
 
 @media (max-width: 600px) {
+    /* ...existing rules... */
+    .random-recipe {
+        display: none;
+    }
+    .random-recipe-mobile {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 12px 0 20px;
+        text-align: center;
+        /* inherit all .random-recipe styles but un-fix it */
+        position: static;
+    }
     .container {
         padding: 20px 5px;
     }
@@ -267,14 +284,6 @@ h1 {
     }
     .back-link {
         font-size: 14px;
-    }
-    .random-recipe {
-        position: static;
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        margin: 16px 0 8px;
-        text-align: center;
     }
 }
 

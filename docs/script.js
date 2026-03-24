@@ -12,10 +12,12 @@ document.querySelectorAll('.recipe-link img').forEach(img => {
 });
 
 // Select a random recipe
-document.getElementById('randomRecipe').addEventListener('click', function() {
-    const recipes = document.querySelectorAll('.recipe-link');
-    const random = recipes[Math.floor(Math.random() * recipes.length)];
-    globalThis.location.href = random.href;
+document.querySelectorAll('.random-recipe').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const recipes = document.querySelectorAll('.recipe-link');
+        const random = recipes[Math.floor(Math.random() * recipes.length)];
+        window.location.href = random.href;
+    });
 });
 
 // Show/hide back-to-top button
