@@ -268,5 +268,13 @@ h1 {
     .back-link {
         font-size: 14px;
     }
+    .random-recipe {
+        position: static;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 16px 0 8px;
+        text-align: center;
+    }
 }
 
