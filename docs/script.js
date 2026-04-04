@@ -77,47 +77,6 @@ if (darkModeToggle) {
     });
 }
 
-// Mobile tap-to-toggle recipe descriptions
-// First tap: show description, Second tap: navigate to recipe
-if ('ontouchstart' in window) {
-    const recipeLinks = document.querySelectorAll('.recipe-link');
-    
-    recipeLinks.forEach(link => {
-        // Prevent click events on mobile to avoid navigation
-        link.addEventListener('click', function(e) {
-            // If not showing description, prevent navigation
-            if (!this.classList.contains('show-description')) {
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
-            }
-        });
-        
-        link.addEventListener('touchend', function(e) {
-            // If this link already shows description, navigate manually
-            if (this.classList.contains('show-description')) {
-                // Navigate to the href
-                window.location.href = this.href;
-                return;
-            }
-            
-            // Otherwise, prevent navigation and show description
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Remove show-description from all other links
-            recipeLinks.forEach(l => l.classList.remove('show-description'));
-            
-            // Add show-description to this link
-            this.classList.add('show-description');
-        });
-    });
-    
-    // Remove show-description when tapping outside recipe links
-    document.addEventListener('touchend', function(e) {
-        if (!e.target.closest('.recipe-link')) {
-            recipeLinks.forEach(l => l.classList.remove('show-description'));
-        }
-    });
-}
+// Mobile: descriptions disabled for cleaner UX
+// Desktop hover works via CSS only
 
