@@ -83,19 +83,22 @@ if ('ontouchstart' in window) {
     const recipeLinks = document.querySelectorAll('.recipe-link');
     
     recipeLinks.forEach(link => {
-        let touchStarted = false;
-        
-        link.addEventListener('touchstart', function(e) {
-            touchStarted = true;
+        // Prevent click events on mobile to avoid navigation
+        link.addEventListener('click', function(e) {
+            // If not showing description, prevent navigation
+            if (!this.classList.contains('show-description')) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
         });
         
         link.addEventListener('touchend', function(e) {
-            if (!touchStarted) return;
-            touchStarted = false;
-            
-            // If this link already shows description, allow navigation
+            // If this link already shows description, navigate manually
             if (this.classList.contains('show-description')) {
-                return; // Let the link navigate normally
+                // Navigate to the href
+                window.location.href = this.href;
+                return;
             }
             
             // Otherwise, prevent navigation and show description
