@@ -426,15 +426,18 @@ h1 {
         font-size: 1.2em;
         padding: 0.4em 0.6em;
         grid-template-columns: 2em 1fr;
+        grid-template-rows: auto;
+        align-items: center;
     }
     .recipe-link img {
         height: 2em;
         width: 2em;
+        grid-row: 1;
     }
 
     /* Hide descriptions on mobile - desktop hover only */
     .recipe-description {
-        display: none;
+        display: none !important;
     }
 
     /* Recipe detail page — mobile */
