@@ -423,37 +423,51 @@ h1 {
         padding: 10px;
     }
     .recipe-link {
-        font-size: 1.2em;
-        padding: 0.4em 0.6em;
-        display: grid;
-        grid-template-columns: 2em 1fr;
-        grid-template-rows: auto;
-        gap: 0.75em;
-        align-items: center;
+        font-size: 1.2em !important;
+        padding: 0.4em 0.6em !important;
+        display: grid !important;
+        grid-template-columns: 2em 1fr !important;
+        grid-template-rows: auto !important;
+        gap: 0.75em !important;
+        align-items: center !important;
     }
 
     .recipe-link img {
-        height: 2em;
-        width: 2em;
-        grid-column: 1;
-        grid-row: 1;
+        height: 2em !important;
+        width: 2em !important;
+        grid-column: 1 !important;
+        grid-row: 1 !important;
     }
 
     .recipe-link span {
-        grid-column: 2;
-        grid-row: 1;
+        grid-column: 2 !important;
+        grid-row: 1 !important;
     }
 
-    /* Completely hide descriptions on mobile */
+    /* KILL descriptions on mobile - multiple ways */
     .recipe-description {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        max-height: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        left: -9999px !important;
     }
 
     /* No hover effects on mobile */
     .recipe-link:hover {
-        background: var(--accent);
-        color: var(--text-primary);
-        transform: none;
+        background: var(--accent) !important;
+        color: var(--text-primary) !important;
+        transform: none !important;
+    }
+
+    .recipe-link:hover .recipe-description {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        max-height: 0 !important;
     }
 
     /* Recipe detail page — mobile */
