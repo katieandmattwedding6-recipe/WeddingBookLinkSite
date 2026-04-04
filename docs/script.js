@@ -76,3 +76,35 @@ if (darkModeToggle) {
         }
     });
 }
+
+// Mobile tap-to-toggle recipe descriptions
+// First tap: show description, Second tap: navigate to recipe
+if (window.innerWidth <= 600) {
+    const recipeLinks = document.querySelectorAll('.recipe-link');
+    
+    recipeLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // If this link already shows description, allow navigation
+            if (this.classList.contains('show-description')) {
+                return; // Let the link navigate normally
+            }
+            
+            // Otherwise, prevent navigation and show description
+            e.preventDefault();
+            
+            // Remove show-description from all other links
+            recipeLinks.forEach(l => l.classList.remove('show-description'));
+            
+            // Add show-description to this link
+            this.classList.add('show-description');
+        });
+    });
+    
+    // Remove show-description when clicking outside recipe links
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.recipe-link')) {
+            recipeLinks.forEach(l => l.classList.remove('show-description'));
+        }
+    });
+}
+

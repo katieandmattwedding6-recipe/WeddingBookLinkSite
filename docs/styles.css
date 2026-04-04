@@ -434,11 +434,17 @@ h1 {
         grid-row: 1 / span 2;
     }
 
-    /* Show descriptions on mobile with active state (when tapped) */
-    .recipe-link:active .recipe-description {
+    /* Show descriptions on mobile when toggled with tap */
+    .recipe-link.show-description {
+        background: var(--accent-hover);
+        color: var(--accent-hover-text);
+    }
+
+    .recipe-link.show-description .recipe-description {
         max-height: 100px;
         opacity: 1;
         padding-top: 0.5em;
+        color: var(--accent-hover-text);
     }
 
     .recipe-description {
