@@ -425,19 +425,35 @@ h1 {
     .recipe-link {
         font-size: 1.2em;
         padding: 0.4em 0.6em;
+        display: grid;
         grid-template-columns: 2em 1fr;
         grid-template-rows: auto;
+        gap: 0.75em;
         align-items: center;
     }
+
     .recipe-link img {
         height: 2em;
         width: 2em;
+        grid-column: 1;
         grid-row: 1;
     }
 
-    /* Hide descriptions on mobile - desktop hover only */
+    .recipe-link span {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* Completely hide descriptions on mobile */
     .recipe-description {
         display: none !important;
+    }
+
+    /* No hover effects on mobile */
+    .recipe-link:hover {
+        background: var(--accent);
+        color: var(--text-primary);
+        transform: none;
     }
 
     /* Recipe detail page — mobile */
