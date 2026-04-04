@@ -173,7 +173,7 @@ h1 {
     grid-row: 2;
     font-size: 0.5em;
     margin: 0;
-    padding-top: 0.3em;
+    padding-top: 0;
     color: var(--text-secondary);
     line-height: 1.4;
     max-height: 0;
